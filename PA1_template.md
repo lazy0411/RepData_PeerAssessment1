@@ -191,8 +191,8 @@ plot_steps_per_day(complete_steps_per_day, complete_mean_steps, complete_median_
 
 ```r
 calc_day_of_week_data <- function(complete_table) {
-    # I am using RStudio outside the US, so the result of weekdays() is Chinese.
-    # Use the Sys.setlocale function
+    # I am using RStudio in China, so the result of weekdays() is Chinese.  Use
+    # the Sys.setlocale function
     Sys.setlocale("LC_TIME", "en_US")
     
     complete_table$weekday <- as.factor(weekdays(complete_table$date))

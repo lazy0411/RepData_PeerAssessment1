@@ -115,7 +115,7 @@ impute_means <- function(table, defaults)
 {
     na_indices <- which(is.na(table$steps))
     defaults <- steps_per_interval
-    na_replacements <- unlist(lapply(na_indices, FUN=function(idx){
+    na_replacements <- unlist(lapply(na_indices, FUN=function(idx) {
         interval = table[idx,]$interval
         defaults[defaults$interval == interval,]$steps
         }))
@@ -148,7 +148,7 @@ plot_steps_per_day(complete_steps_per_day, complete_mean_steps, complete_median_
 ```{r day_of_week_data, echo=TRUE}
 calc_day_of_week_data <- function(complete_table)
 {
-    # I am using RStudio outside the US, so the result of weekdays() is Chinese.
+    # I am using RStudio in China, so the result of weekdays() is Chinese.
     # Use the Sys.setlocale function
     Sys.setlocale("LC_TIME", "en_US")
     
